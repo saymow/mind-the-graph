@@ -1,0 +1,31 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap');
+
+:root {
+  --primary-color: #DC1866;
+  --secondary-color: #FF9226;
+  --tertiary-color: #7833FF;
+  --quaternary-color: #5F29CC;
+  --bg-color: #EEEEEE;
+  --white-color: #FFFFFF;
+  --black-color: #212121;
+  --container-width: 1260px;
+
+  font-size: 10px;
+}
+
+body {
+  font-family: "Lato", sans-serif;
+  background: var(--bg-color);
+  color: var(--white-color);
+}
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}

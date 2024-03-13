@@ -1,0 +1,45 @@
+.presentation-container {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  height: 75vh;
+}
+
+.presentation-backdrop {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: transparent linear-gradient(248deg, #dc1866 0%, #ff9226 100%) 0%
+    0% no-repeat padding-box;
+  z-index: -1;
+}
+
+.presentation-main {
+  position: absolute;
+  bottom: -3rem;
+  display: flex;
+  justify-content: space-between;
+  gap: 14rem;
+  width: 100%;
+  max-width: var(--container-width);
+}
+
+.presentation-main section:first-child {
+  max-width: 34rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.presentation-main section:first-child h1 {
+  font-size: 3.6rem;
+}
+
+.presentation-main section:first-child button {
+  margin-top: 3rem;
+}
+
+.presentation-main section:last-child {
+  flex: 1;
+}
