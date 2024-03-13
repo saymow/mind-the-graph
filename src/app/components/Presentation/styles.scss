@@ -18,8 +18,8 @@
   position: absolute;
   bottom: -3rem;
   display: flex;
-  justify-content: space-between;
-  gap: 14rem;
+  justify-content: space-evenly;
+  gap: 10rem;
   width: 100%;
   max-width: var(--container-width);
 }

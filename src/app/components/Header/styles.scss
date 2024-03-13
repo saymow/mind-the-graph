@@ -1,0 +1,41 @@
+.header-container {
+  z-index: 99;
+  position: fixed;
+  padding: 3.5rem 0;
+  width: 100%;
+
+  display: flex;
+  justify-content: center;
+
+  background: transparent;
+  border-bottom: 1px solid transparent;
+
+  transition: all 50ms ease;
+
+  &[data-background="glass"] {
+    background: rgba(0, 0, 0, 0.5);
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+    border-color: rgba(0, 0, 0, 0.8);
+  }
+
+  & > div {
+    width: 100%;
+    max-width: var(--container-width);
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .header-actions-list {
+    display: flex;
+    align-items: center;
+    list-style: none;
+    font-size: 1.6rem;
+    gap: 4rem;
+
+    & > li a:hover {
+      opacity: 0.6;
+    }
+  }
+}
