@@ -1,14 +1,7 @@
-import Image from "next/image";
+import Service, { ServiceModel } from "./Service";
 import "./styles.scss";
 
-interface Service {
-  poster_url: string;
-  poster_alt: string;
-  title: string;
-  description: string;
-}
-
-const services: Service[] = [
+const services: ServiceModel[] = [
   {
     poster_url: "/image_2.svg",
     poster_alt: "A girl using a computer",
@@ -38,17 +31,13 @@ export default function Services() {
       <h2>Visualize what Mind the Graph can do for you</h2>
       <section className="services-list">
         {services.map((service) => (
-          <article key={service.title} className="service-item">
-            <Image
-              src={service.poster_url}
-              alt={service.poster_alt}
-              width={215}
-              height={202}
-            />
-            <h3>{service.title}</h3>
-            <h4>{service.description}</h4>
-            <a href="#">Learn more</a>
-          </article>
+          <Service
+            key={service.title}
+            title={service.title}
+            description={service.description}
+            poster_url={service.poster_url}
+            poster_alt={service.poster_alt}
+          />
         ))}
       </section>
     </section>
