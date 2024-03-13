@@ -1,4 +1,5 @@
 import Header from "./components/Header";
+import Information from "./components/Information";
 import Presentation from "./components/Presentation";
 import Services from "./components/Services";
 import "./page.scss";
@@ -10,6 +11,7 @@ export default function Home() {
       <Presentation />
       <div className="content-container">
         <Services />
+        <Information />
       </div>
     </main>
   );

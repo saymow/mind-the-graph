@@ -8,7 +8,7 @@ export interface ServiceModel {
   description: string;
 }
 
-export default function Service(props: ServiceModel) {
+export default function Service(props: Readonly<ServiceModel>) {
   const { title, poster_alt, poster_url, description } = props;
 
   return (

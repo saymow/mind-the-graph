@@ -4,7 +4,11 @@
   
   .content-container {
     align-self: center;
-    margin-top: 12rem;
+    margin: 12rem 0;
     max-width: var(--container-width);
+    
+    display: flex;
+    flex-direction: column;
+    gap: 8rem;
   }
 }
