@@ -1,0 +1,45 @@
+.services-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10rem;
+
+  h2 {
+    font-size: 4rem;
+    color: var(--tertiary-color);
+  }
+
+  .services-list {
+    width: 80%;
+    display: flex;
+    gap: 16rem;
+    justify-content: space-between;
+
+    .service-item {
+      height: 46rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      gap: 2rem;
+
+      h3 {
+        font-size: 2rem;
+        color: var(--tertiary-color);
+      }
+
+      h4 {
+        font-size: 2rem;
+        color: var(--black-color);
+      }
+
+      a {
+        margin-top: auto;
+        text-transform: uppercase;
+        font-weight: bold;
+        font-size: 1.6rem;
+        color: var(--tertiary-color);
+      }
+    }
+  }
+}
