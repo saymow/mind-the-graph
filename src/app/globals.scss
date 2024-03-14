@@ -1,16 +1,28 @@
-@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap");
 
 :root {
-  --primary-color: #DC1866;
-  --secondary-color: #FF9226;
-  --tertiary-color: #7833FF;
-  --quaternary-color: #5F29CC;
-  --bg-color: #EEEEEE;
-  --white-color: #FFFFFF;
+  --primary-color: #dc1866;
+  --secondary-color: #ff9226;
+  --tertiary-color: #7833ff;
+  --quaternary-color: #5f29cc;
+  --bg-color: #eeeeee;
+  --white-color: #ffffff;
   --black-color: #212121;
   --container-width: 1260px;
 
   font-size: 10px;
+}
+
+@media screen and (max-width: 1080px) {
+  :root {
+    font-size: 9px;
+  }
+}
+
+@media screen and (max-width: 560px) {
+  :root {
+    font-size: 8px;
+  }
 }
 
 body {

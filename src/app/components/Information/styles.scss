@@ -2,12 +2,13 @@
   background: var(--quaternary-color);
   border-radius: 2.4rem;
   padding: 8rem 12rem;
-
+  
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 6rem;
   text-align: center;
+  width: 100%;
 
   h2 {
     font-size: 3.4rem;
@@ -23,5 +24,16 @@
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     gap: 10rem;
+  }
+}
+
+
+@media screen and (max-width: 560px) {
+  .information-container {
+    padding: 6rem 9rem;
+
+    .information-items {
+      grid-template-columns: 1fr 1fr;
+    }
   }
 }

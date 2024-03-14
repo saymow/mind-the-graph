@@ -1,0 +1,46 @@
+.modal_container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 99;
+  height: 100%;
+  width: 100%;
+}
+
+.modal_backdrop {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+
+  background: rgba(0, 0, 0, 0.8);
+}
+
+.modal_main {
+  position: absolute;
+  z-index: 999;
+
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  background: rgba(0, 0, 0, 0.7);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  border-color: rgba(0, 0, 0, 0.9);
+  border-radius: 1rem;
+}
+
+.modal_close_btn {
+  position: absolute;
+  z-index: 9999;
+  top: 0.5rem;
+  right: 0.5rem;
+  cursor: pointer;
+  color: var(--bg-color);
+  background-color: rgba(255, 255, 255, 0.6);
+  border-radius: 0.5rem;
+}

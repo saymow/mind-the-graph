@@ -2,6 +2,7 @@
 import { useCallback, useEffect, useState } from "react";
 import Image from "next/image";
 import Button from "../Button";
+import Modal from "../Modal";
 import "./styles.scss";
 
 enum BackgroundKind {
@@ -10,14 +11,25 @@ enum BackgroundKind {
 }
 
 export default function Header() {
-  const [backgroundKind, setBackgroundKind] = useState<BackgroundKind>(
-    BackgroundKind.Transparent
+  const [backgroundKind, setBackgroundKind] = useState(
+    typeof window !== "undefined" && window.scrollY > 0
+      ? BackgroundKind.Glass
+      : BackgroundKind.Transparent
   );
+  const [isSandwichMenuOpen, setIsSandwichMenuOpen] = useState(false);
 
   const handleScrollEvent = useCallback((_: Event) => {
     if (window.scrollY === 0) setBackgroundKind(BackgroundKind.Transparent);
     else setBackgroundKind(BackgroundKind.Glass);
   }, []);
+
+  const handleCloseSandwichMenu = () => {
+    setIsSandwichMenuOpen(false);
+  };
+
+  const handleOpenSandwichMenu = () => {
+    setIsSandwichMenuOpen(true);
+  };
 
   useEffect(() => {
     if (window.scrollY === 0) setBackgroundKind(BackgroundKind.Transparent);
@@ -33,16 +45,52 @@ export default function Header() {
   }, [handleScrollEvent]);
 
   return (
-    <header className="header-container" data-background={backgroundKind}>
-      <div>
-        <Image
-          src="/logo_mindthegraph.svg"
-          alt="Mind the graph logo"
-          height={45}
-          width={135}
-        />
+    <>
+      <header className="header-container" data-background={backgroundKind}>
+        <div>
+          <Image
+            src="/logo_mindthegraph.svg"
+            alt="Mind the graph logo"
+            height={45}
+            width={135}
+          />
+          <nav>
+            <ul className="header-actions-list">
+              <li>
+                <a href="#Templates">Templates</a>
+              </li>
+              <li>
+                <a href="#Pricing">Pricing</a>
+              </li>
+              <li>
+                <a href="#Blog">Blog</a>
+              </li>
+              <li>
+                <a href="#Jobs">Jobs</a>
+              </li>
+              <li>
+                <Button variant="secondary">Login</Button>
+              </li>
+              <li>
+                <Button>Sign up free</Button>
+              </li>
+            </ul>
+          </nav>
+          <span
+            onClick={handleOpenSandwichMenu}
+            className={`sandwich-menu-button ${
+              isSandwichMenuOpen ? "open" : ""
+            }`}
+          >
+            <div></div>
+            <div></div>
+            <div></div>
+          </span>
+        </div>
+      </header>
+      <Modal isOpen={isSandwichMenuOpen} onClose={handleCloseSandwichMenu}>
         <nav>
-          <ul className="header-actions-list">
+          <ul className="header-sandwich-actions-list">
             <li>
               <a href="#Templates">Templates</a>
             </li>
@@ -63,7 +111,7 @@ export default function Header() {
             </li>
           </ul>
         </nav>
-      </div>
-    </header>
+      </Modal>
+    </>
   );
 }

@@ -21,6 +21,7 @@
   justify-content: space-evenly;
   gap: 10rem;
   width: 100%;
+  padding: 0 1rem;
   max-width: var(--container-width);
 }
 
@@ -42,4 +43,28 @@
 
 .presentation-main section:last-child {
   flex: 1;
+}
+
+@media only screen and (max-width: 1080px) {
+  .presentation-main {
+    max-width: 60%;
+    flex-direction: column;
+    gap: 5rem;
+  }
+
+  .presentation-main section:first-child {
+    max-width: unset;
+  }
+}
+
+
+@media only screen and (max-width: 560px) {
+  .presentation-main {
+    top: 50%;
+    transform: translateY(-40%);
+  }
+
+  .presentation-main section:last-child {
+    display: none;
+  }
 }

@@ -16,7 +16,9 @@ export default function Service(props: Readonly<ServiceModel>) {
       <Image src={poster_url} alt={poster_alt} width={215} height={202} />
       <h3>{title}</h3>
       <h4>{description}</h4>
-      <a href="#">Learn more</a>
+      <a href="#">
+         Learn more
+      </a>
     </article>
   );
 }
