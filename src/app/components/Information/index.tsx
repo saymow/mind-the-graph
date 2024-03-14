@@ -1,3 +1,4 @@
+"use client";
 import { motion } from "framer-motion";
 import Button from "../Button";
 import Item, { ItemModel } from "./Item";

@@ -1,3 +1,4 @@
+"use client";
 import { motion } from "framer-motion";
 import Service, { ServiceModel } from "./Service";
 import "./styles.scss";
