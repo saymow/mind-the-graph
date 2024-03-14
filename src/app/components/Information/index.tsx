@@ -1,3 +1,4 @@
+import { motion } from "framer-motion";
 import Button from "../Button";
 import Item, { ItemModel } from "./Item";
 import "./styles.scss";
@@ -38,7 +39,11 @@ const items: ItemModel[] = [
 
 export default function Information() {
   return (
-    <section className="information-container">
+    <motion.section 
+      className="information-container"
+      initial={{ transform: "translateY(5rem)", opacity: 0 }}
+      whileInView={{ transform: "translateY(0)", opacity: 1 }}
+    >
       <h2>Create effective science figures in minutes</h2>
       <h4>
         We built Mind the Graph for simplicity. The platform is easy to use and
@@ -57,6 +62,6 @@ export default function Information() {
         ))}
       </section>
       <Button variant="secondary">EXPLORE MIND THE GRAPH</Button>
-    </section>
+    </motion.section>
   );
 }

@@ -1,3 +1,4 @@
+import { motion } from "framer-motion";
 import Service, { ServiceModel } from "./Service";
 import "./styles.scss";
 
@@ -27,7 +28,11 @@ const services: ServiceModel[] = [
 
 export default function Services() {
   return (
-    <section className="services-container">
+    <motion.section
+      className="services-container"
+      initial={{ transform: "translateY(5rem)", opacity: 0 }}
+      whileInView={{ transform: "translateY(0)", opacity: 1 }}
+    >
       <h2>Visualize what Mind the Graph can do for you</h2>
       <section className="services-list">
         {services.map((service) => (
@@ -40,6 +45,6 @@ export default function Services() {
           />
         ))}
       </section>
-    </section>
+    </motion.section>
   );
 }
