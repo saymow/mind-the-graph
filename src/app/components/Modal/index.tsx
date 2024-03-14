@@ -1,6 +1,7 @@
 "use client";
 import { createPortal } from "react-dom";
 import { useCallback, useEffect } from "react";
+import CloseIcon from '@mui/icons-material/Close';
 import "./styles.scss";
 
 interface Props {
@@ -41,14 +42,11 @@ const Modal: React.FC<Props> = (props) => {
     <div className="modal_container">
       <div className="modal_backdrop" onClick={onClose}></div>
       <main className="modal_main">
-        <span
+        <CloseIcon
           onClick={onClose}
           className="modal_close_btn"
-          width="2rem"
-          height="2rem"
-        >
-          close
-        </span>
+          sx={{fontSize: "3rem"}}
+        />
         {children}
       </main>
     </div>,

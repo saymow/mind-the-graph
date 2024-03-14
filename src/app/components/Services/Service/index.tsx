@@ -1,4 +1,5 @@
 import Image from "next/image";
+import ChevronRightIcon from "@mui/icons-material/ChevronRight";
 import "./styles.scss";
 
 export interface ServiceModel {
@@ -17,7 +18,8 @@ export default function Service(props: Readonly<ServiceModel>) {
       <h3>{title}</h3>
       <h4>{description}</h4>
       <a href="#">
-         Learn more
+        <ChevronRightIcon sx={{ fontSize: "3rem" }} />
+        Learn more
       </a>
     </article>
   );
